@@ -14,8 +14,8 @@
 
   ---
 
-> แรงบันดาลใจ: จากหัว ที่คิดอยากมีหุ่นและบ้าน `Home Gundam.jpg`
-> <img src="Home Gundam.jpg" width="500" alt="Home Gundam">
+> แรงบันดาลใจ: จากหัว ที่คิดอยากมีหุ่นและบ้าน
+> <img src="HomeGundam.jpg" width="500" alt="HomeGundam">
 
 ---
 
