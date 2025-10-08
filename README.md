@@ -15,7 +15,7 @@
   ---
 
 > แรงบันดาลใจ: จากหัว ที่คิดอยากมีหุ่นและบ้าน
-> <img src="HomeGundam.jpg" width="500" alt="HomeGundam">
+> <img src="HomeGundam.jpg" width="500" alt="HomeGundam"><br>
 
 ---
 
