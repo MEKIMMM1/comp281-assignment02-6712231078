@@ -83,6 +83,7 @@ function main() {
 	const matPlane5 = new THREE.MeshStandardMaterial({color: 0x663300, side: THREE.DoubleSide}); //สร้างวัสดุพื้นเป็น สีน้ำตาล
 	const meshPlane5 = new THREE.Mesh(geoPlane5, matPlane5); //แสดงพื้นดด้านบน,ด้านล่าง
 	meshPlane5.position.set(25, 0.050, 14.9); //ตำแหน่ง
+
 	meshPlane5.receiveShadow = true; //รับเงา
 	M3D.scene.add(meshPlane5); //เพิ่มลงในฉาก
 
