@@ -229,14 +229,14 @@ function main() {
 	M3D.scene.add (box);
 	box.add(grop);
 
-	// ตัวอย่างการสร้างวัตถุ 3D (พระอาทิตย์)
+	//พระอาทิตย์
 	const spherego = new THREE.SphereGeometry(4, 16, 8); //วงกลมรัศ4
     const Spheremate = new THREE.MeshStandardMaterial({color : 0xFFFF00, emissive: 0x0033FF, emissiveIntensity: 1}); //สีฟ้าเรืองแสงสีเหลือง
     const sphere = new THREE.Mesh(spherego, Spheremate); 
     sphere.position.set(0, 50, -60)  //ตำแหน่ง
     grop.add(sphere);
 
-	// แสงจากพระอาทิตย์
+	//แสงจากพระอาทิตย์
 	const light = new THREE.DirectionalLight(0xffffff, 10);
 	light.position.set(0, 50, -60);
 	light.castShadow = true;
@@ -247,11 +247,10 @@ function main() {
 	light.shadow.camera.top = 100;
 	light.shadow.camera.bottom = -50;
 	grop.add(light);
-
+	
 	const light2 = new THREE.DirectionalLight(0xffffff, 1);
 	light2.position.set(0, 10, 0); // กำหนดตำแหน่งของแสง
 	light2.castShadow = true; // เปิดใช้งานการสร้างเงา
-
 	grop.add(light2);
 
 
