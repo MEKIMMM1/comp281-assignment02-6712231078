@@ -236,11 +236,23 @@ function main() {
     sphere.position.set(0, 50, -60)  //ตำแหน่ง
     grop.add(sphere);
 
-	const light = new THREE.DirectionalLight(0xffffff, 1);
-	light.position.set(0, 10, 0); // กำหนดตำแหน่งของแสง
-	light.castShadow = true; // เปิดใช้งานการสร้างเงา
-	
+	// แสงจากพระอาทิตย์
+	const light = new THREE.DirectionalLight(0xffffff, 10);
+	light.position.set(0, 50, -60);
+	light.castShadow = true;
+	light.shadow.mapSize.width = 2048;
+	light.shadow.mapSize.height = 2048;
+	light.shadow.camera.left = -100;
+	light.shadow.camera.right = 100;
+	light.shadow.camera.top = 100;
+	light.shadow.camera.bottom = -50;
 	grop.add(light);
+
+	const light2 = new THREE.DirectionalLight(0xffffff, 1);
+	light2.position.set(0, 10, 0); // กำหนดตำแหน่งของแสง
+	light2.castShadow = true; // เปิดใช้งานการสร้างเงา
+
+	grop.add(light2);
 
 
 	//แสง
@@ -262,7 +274,7 @@ function main() {
 		M3D.controls.update(); // อัปเดต controls
 		stats.update(); // อัปเดต Stats
 		FPS.update(); // อัปเดต FPS
-		grop.rotation.z -= delta * Math.PI / 3.5; //หมุนกลุ่ม grop รอบแกน z
+		grop.rotation.z -= delta * Math.PI / 7.5; //หมุนกลุ่ม grop รอบแกน z
 		// UPDATE state of objects here
 		// TODO: อัปเดตสถานะของวัตถุต่างๆ ที่ต้องการในแต่ละเฟรม (เช่น การเคลื่อนที่, การหมุน ฯลฯ)
 		
