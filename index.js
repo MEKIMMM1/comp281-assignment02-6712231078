@@ -228,8 +228,6 @@ function main() {
 	M3D.scene.add (box);
 	box.add(grop);
 
-
-
 	// ตัวอย่างการสร้างวัตถุ 3D (พระอาทิตย์)
 	const spherego = new THREE.SphereGeometry(4, 16, 8); //วงกลมรัศ4
     const Spheremate = new THREE.MeshStandardMaterial({color : 0xFFFF00, emissive: 0x0033FF, emissiveIntensity: 1}); //สีฟ้าเรืองแสงสีเหลือง
@@ -240,6 +238,7 @@ function main() {
 	const light = new THREE.DirectionalLight(0xffffff, 1);
 	light.position.set(0, 10, 0); // กำหนดตำแหน่งของแสง
 	light.castShadow = true; // เปิดใช้งานการสร้างเงา
+	
 	grop.add(light);
 
 
@@ -263,15 +262,6 @@ function main() {
 		stats.update(); // อัปเดต Stats
 		FPS.update(); // อัปเดต FPS
 		grop.rotation.z -= delta * Math.PI / 3.5; //หมุนกลุ่ม grop รอบแกน z
-		// Make sure the shadow camera follows the directional light so shadows move correctly
-		if (light.shadow && light.shadow.camera) {
-			// Position shadow camera at the light and point it to the target
-			light.shadow.camera.position.copy(light.position);
-			light.shadow.camera.lookAt(grop.position);
-			// Update projection and world matrices so renderer uses the latest values
-			light.shadow.camera.updateProjectionMatrix();
-			light.shadow.camera.updateMatrixWorld();
-		}
 		// UPDATE state of objects here
 		// TODO: อัปเดตสถานะของวัตถุต่างๆ ที่ต้องการในแต่ละเฟรม (เช่น การเคลื่อนที่, การหมุน ฯลฯ)
 		
