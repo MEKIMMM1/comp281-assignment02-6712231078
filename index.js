@@ -36,7 +36,7 @@ function main() {
 
 
 	//ภูเขา
-	const motigeo = new THREE.ConeGeometry( 12, 27, 12 ); 
+	const motigeo = new THREE.ConeGeometry( 12, 27, 18 ); 
 	const motimat = new THREE.MeshStandardMaterial( {color: 0x003300} );
 	const mountain1 = new THREE.Mesh( motigeo, motimat );
 	mountain1.position.set(-25.5, 13.5, -25.5);
@@ -83,12 +83,11 @@ function main() {
 	const matPlane5 = new THREE.MeshStandardMaterial({color: 0x663300, side: THREE.DoubleSide}); //สร้างวัสดุพื้นเป็น สีน้ำตาล
 	const meshPlane5 = new THREE.Mesh(geoPlane5, matPlane5); //แสดงพื้นดด้านบน,ด้านล่าง
 	meshPlane5.position.set(25, 0.050, 14.9); //ตำแหน่ง
-
 	meshPlane5.receiveShadow = true; //รับเงา
 	M3D.scene.add(meshPlane5); //เพิ่มลงในฉาก
 
 	//ต้นข้าว
-	function addBox2(position, scale = [0.245, 0.4, 0.245], color = 0x00ff00) {
+	function addBox2(position, scale = [0.245, 0.5, 0.245], color = 0x00ff00) {
 		const geometry = new THREE.BoxGeometry(...scale);
 		const material = new THREE.MeshStandardMaterial({ color });
 		const mesh = new THREE.Mesh(geometry, material);
@@ -126,10 +125,9 @@ function main() {
 	const riverGeom = new THREE.BoxGeometry(riverWidth, riverHeight, riverDepth);
 	const riverMat = new THREE.MeshStandardMaterial({
 		color: 0x1e90ff,
-		transparent: true,
+		transparent: true, //ทำให้น้ำโปร่งใส	
 		opacity: 0.9, //ความทึบ
-		metalness: 0.05, //ความมันวาว
-		roughness: 0.6, //ความหยาบ
+		metalness: 0.9, //ความมันเงา
 	});
 	const river = new THREE.Mesh(riverGeom, riverMat);
 	river.receiveShadow = true;
@@ -230,8 +228,8 @@ function main() {
 	box.add(grop);
 
 	//พระอาทิตย์
-	const spherego = new THREE.SphereGeometry(4, 16, 8); //วงกลมรัศ4
-    const Spheremate = new THREE.MeshStandardMaterial({color : 0xFFFF00, emissive: 0x0033FF, emissiveIntensity: 1}); //สีฟ้าเรืองแสงสีเหลือง
+	const spherego = new THREE.SphereGeometry(4, 16); //วงกลมรัศ4
+    const Spheremate = new THREE.MeshStandardMaterial({color : 0xFFFF00, emissive: 0x0033FF, emissiveIntensity: 1}); //สีเหลืองเรืองแสง
     const sphere = new THREE.Mesh(spherego, Spheremate); 
     sphere.position.set(0, 50, -60)  //ตำแหน่ง
     grop.add(sphere);
